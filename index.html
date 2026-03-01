@@ -1,0 +1,1239 @@
+Gmail	Raj Saha <raj9674saha@gmail.com>
+b-project
+Raj Saha <raj9674saha@gmail.com>	22 February 2026 at 11:53
+To: Raj Saha <raj9674saha@gmail.com>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RetroTech — Precision. Innovation. Growth.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0a0f1e;
+      --navy2:   #111827;
+      --gold:    #c9a84c;
+      --gold-lt: #e0c070;
+      --cream:   #f5f0e8;
+      --slate:   #8a93a6;
+      --white:   #ffffff;
+      --card-bg: #ffffff;
+      --ff-display: 'Cormorant Garamond', serif;
+      --ff-body:    'DM Sans', sans-serif;
+      --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      height: 60px;
+      background: rgba(10,15,30,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+      transition: var(--transition);
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+      color: var(--white);
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .nav-brand img {
+      width: 40px; height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .hamburger {
+      display: none;
+      background: none; border: none;
+      cursor: pointer; flex-direction: column; gap: 5px;
+    }
+    .hamburger span {
+      display: block; width: 26px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 72px; left: 0; right: 0;
+      background: var(--navy);
+      padding: 24px 5vw 32px;
+      z-index: 999;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .mobile-menu.open { display: flex; flex-direction: column; gap: 20px; }
+    .mobile-menu a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 0 5vw;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,168,76,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 900px;
+      text-align: center;
+      animation: fadeUp 1s ease both;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '—';
+      margin: 0 10px;
+      opacity: 0.6;
+    }
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 14px 36px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none; cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .hero-cta:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+    }
+    .hero-subscribe {
+      margin-top: 36px;
+      display: flex; justify-content: center;
+    }
+    .subscribe-wrap {
+      display: flex;
+      border: 1px solid rgba(201,168,76,0.35);
+      overflow: hidden;
+      max-width: 420px;
+      width: 100%;
+    }
+    .subscribe-wrap input {
+      flex: 1;
+      padding: 13px 18px;
+      background: rgba(255,255,255,0.06);
+      border: none; outline: none;
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+    }
+    .subscribe-wrap input::placeholder { color: rgba(255,255,255,0.35); }
+    .subscribe-wrap button {
+      padding: 13px 22px;
+      background: var(--gold);
+      border: none; cursor: pointer;
+      color: var(--navy);
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background var(--transition);
+    }
+    .subscribe-wrap button:hover { background: var(--gold-lt); }
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      animation: bounce 2.2s ease-in-out infinite;
+    }
+    .hero-scroll i { font-size: 1.1rem; color: var(--gold); opacity: 0.7; }
+
+    /* ══════════════════════════════════════
+       SECTION COMMONS
+    ══════════════════════════════════════ */
+    section { padding: 100px 5vw; }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      color: var(--slate);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 560px;
+    }
+    .gold-line {
+      display: block;
+      width: 56px; height: 2px;
+      background: var(--gold);
+      margin: 24px 0;
+    }
+    .gold-line.center { margin: 24px auto; }
+
+    /* ══════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════ */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 60px;
+    }
+    .about-image {
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%);
+      transition: filter var(--transition);
+    }
+    .about-image:hover img { filter: grayscale(0%); }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px;
+      width: 100%; height: 100%;
+      border: 2px solid var(--gold);
+      opacity: 0.4;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+    .about-image:hover::before { top: -14px; left: -14px; opacity: 0.7; }
+    .about-text p {
+      color: #4a5568;
+      font-size: 0.97rem;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+    .btn-primary-rt {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 32px;
+      background: var(--navy);
+      color: var(--white);
+      border: none; cursor: pointer;
+      font-family: var(--ff-body);
+      font-size: 0.83rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+      margin-top: 10px;
+    }
+    .btn-primary-rt:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .values-text h3 {
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .values-text p {
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+    .values-text strong { color: var(--navy); font-weight: 600; }
+    .values-image img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      filter: grayscale(15%);
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(10,15,30,0.75);
+      backdrop-filter: blur(6px);
+      align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--white);
+      width: 100%; max-width: 440px;
+      margin: 20px;
+      animation: fadeUp 0.3s ease both;
+    }
+    .modal-head {
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .modal-head h4 {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .modal-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--slate); font-size: 1.2rem;
+      transition: color var(--transition);
+    }
+    .modal-close:hover { color: var(--navy); }
+    .modal-body-rt { padding: 28px 32px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 8px;
+    }
+    .form-group input {
+      width: 100%; padding: 12px 16px;
+      border: 1px solid #d1d5db; outline: none;
+      font-family: var(--ff-body); font-size: 0.95rem;
+      transition: border-color var(--transition);
+      background: #fafafa;
+    }
+    .form-group input:focus { border-color: var(--gold); background: var(--white); }
+    .modal-footer-rt {
+      padding: 18px 32px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .modal-footer-rt small { color: var(--slate); font-size: 0.78rem; }
+    .btn-modal-cancel {
+      background: none; border: 1px solid #d1d5db;
+      padding: 10px 22px; cursor: pointer;
+      font-family: var(--ff-body); font-size: 0.83rem;
+      color: var(--slate);
+      transition: var(--transition); margin-right: 10px;
+    }
+    .btn-modal-cancel:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-modal-login {
+      background: var(--navy); border: none;
+      padding: 10px 28px; cursor: pointer;
+      font-family: var(--ff-body); font-size: 0.83rem;
+      font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--white);
+      transition: background var(--transition);
+    }
+    .btn-modal-login:hover { background: var(--gold); color: var(--navy); }
+
+    /* ══════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════ */
+    #services { background: var(--navy); }
+    #services .section-title { color: var(--white); }
+    #services .section-desc { color: rgba(255,255,255,0.5); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(201,168,76,0.15);
+      margin-top: 60px;
+      border: 1px solid rgba(201,168,76,0.15);
+    }
+    .service-card {
+      background: var(--navy2);
+      padding: 44px 36px;
+      transition: background var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .service-card:hover { background: #151c2e; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: rgba(201,168,76,0.1);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      border: 1px solid rgba(201,168,76,0.2);
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon {
+      background: rgba(201,168,76,0.2);
+      border-color: var(--gold);
+    }
+    .service-icon i { font-size: 1.4rem; color: var(--gold); }
+    .service-card h5 {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .service-card p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.75; }
+
+    /* ══════════════════════════════════════
+       PORTFOLIO
+    ══════════════════════════════════════ */
+    #portfolio { background: var(--cream); }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .portfolio-card {
+      position: relative; overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.13); }
+    .portfolio-card img {
+      width: 100%; height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+      filter: grayscale(20%);
+    }
+    .portfolio-card:hover img { transform: scale(1.05); filter: grayscale(0%); }
+    .portfolio-card-body { padding: 24px 26px 28px; }
+    .portfolio-card-body h5 {
+      font-family: var(--ff-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .portfolio-card-body p { color: var(--slate); font-size: 0.88rem; line-height: 1.65; }
+    .portfolio-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    /* ══════════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════════ */
+    .testimonials-section { background: var(--navy2); padding: 80px 5vw; }
+    .testimonials-section .section-title { color: var(--white); }
+    .testimonials-track {
+      position: relative; overflow: hidden;
+      margin-top: 48px;
+    }
+    .testimonials-inner {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 6vw;
+      text-align: center;
+    }
+    .testimonial-quote {
+      font-family: var(--ff-display);
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+      margin-bottom: 36px;
+    }
+    .testimonial-quote::before { content: '\201C'; color: var(--gold); font-size: 1.5em; line-height: 0; vertical-align: -0.3em; margin-right: 4px; }
+    .testimonial-quote::after  { content: '\201D'; color: var(--gold); font-size: 1.5em; line-height: 0; vertical-align: -0.3em; margin-left: 4px; }
+    .testimonial-author strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .testimonial-author span {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+    .testimonial-controls {
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      margin-top: 44px;
+    }
+    .t-btn {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(201,168,76,0.4);
+      background: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1rem;
+      transition: var(--transition);
+    }
+    .t-btn:hover { background: var(--gold); color: var(--navy); }
+    .t-dots { display: flex; gap: 8px; }
+    .t-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,0.25); cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .t-dot.active { background: var(--gold); transform: scale(1.4); }
+
+    /* ══════════════════════════════════════
+       PRICING
+    ══════════════════════════════════════ */
+    #pricing { background: var(--cream); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border: 1px solid #e5e7eb;
+      padding: 44px 36px;
+      position: relative;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); }
+    .pricing-card.featured {
+      background: var(--navy);
+      border-color: var(--gold);
+    }
+    .pricing-card.featured * { color: var(--white) !important; }
+    .pricing-badge {
+      position: absolute; top: -1px; right: 28px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+    }
+    .pricing-tier {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 18px;
+    }
+    .pricing-amount {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-amount sup { font-size: 1.5rem; vertical-align: super; }
+    .pricing-period { font-size: 0.82rem; color: var(--slate); margin-bottom: 32px; }
+    .pricing-divider { border: none; border-top: 1px solid #e5e7eb; margin: 28px 0; }
+    .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,0.12); }
+    .pricing-features { list-style: none; margin-bottom: 36px; }
+    .pricing-features li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.9rem; color: #4a5568;
+      padding: 7px 0;
+    }
+    .pricing-features li i { color: var(--gold); font-size: 0.85rem; }
+    .btn-pricing {
+      display: block; width: 100%;
+      padding: 14px;
+      text-align: center;
+      font-family: var(--ff-body);
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer; border: none;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn-pricing-outline {
+      background: none;
+      border: 1px solid var(--navy);
+      color: var(--navy);
+    }
+    .btn-pricing-outline:hover { background: var(--navy); color: var(--white); }
+    .btn-pricing-filled {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-pricing-filled:hover { background: var(--gold-lt); }
+
+    /* ══════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════ */
+    #contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 72px;
+      margin-top: 60px;
+    }
+    .contact-info h4 {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .contact-info p { color: var(--slate); font-size: 0.93rem; line-height: 1.8; margin-bottom: 32px; }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 22px;
+    }
+    .contact-detail-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: rgba(201,168,76,0.1);
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .contact-detail-icon i { color: var(--gold); font-size: 1rem; }
+    .contact-detail-text span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 3px;
+    }
+    .contact-detail-text p { color: var(--navy); font-size: 0.92rem; margin: 0; }
+    .contact-form { }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #d1d5db; outline: none;
+      font-family: var(--ff-body); font-size: 0.93rem;
+      background: var(--cream);
+      transition: border-color var(--transition), background var(--transition);
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      background: var(--white);
+    }
+    .contact-form textarea { resize: none; height: 148px; margin-bottom: 18px; display: block; }
+    .btn-submit {
+      width: 100%; padding: 15px;
+      background: var(--navy); border: none; cursor: pointer;
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      transition: background var(--transition);
+    }
+    .btn-submit:hover { background: var(--gold); color: var(--navy); }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--navy);
+      padding: 56px 5vw 36px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-divider {
+      width: 56px; height: 1px;
+      background: rgba(201,168,76,0.4);
+      margin: 24px auto;
+    }
+    .footer-copy {
+      color: rgba(255,255,255,0.3);
+      font-size: 0.82rem;
+      margin-bottom: 8px;
+    }
+    .footer-copy a { color: var(--gold); text-decoration: none; }
+    .back-top {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px;
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      text-decoration: none;
+      margin-bottom: 28px;
+      transition: var(--transition);
+    }
+    .back-top:hover { background: var(--gold); color: var(--navy); }
+
+    /* ══════════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid, .values-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .input-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body id="mypage">
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a class="nav-brand" href="#mypage">
+      <img src="b.webp" alt="RetroTech Logo" onerror="this.style.display='none'">
+      RETRO<span>TECH</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+    <a href="#pricing" onclick="closeMenu()">Pricing</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Welcome to RetroTech</span>
+      <h1>Precision.<br><em>Innovation.</em> Growth.</h1>
+      <p>We architect scalable solutions, craft secure systems, and build lasting partnerships for forward-thinking businesses.</p>
+      <a href="#about" class="hero-cta">
+        Discover Our Work <i class="bi bi-arrow-right"></i>
+      </a>
+      <div class="hero-subscribe">
+        <div class="subscribe-wrap">
+          <input type="email" placeholder="Your email address" />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <i class="bi bi-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label reveal">Our Story</div>
+      <h2 class="section-title reveal">About the Company</h2>
+      <span class="gold-line reveal"></span>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="bar.webp" alt="Company Image" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80'" />
+        </div>
+        <div class="about-text reveal">
+          <p>We are a technology-forward company dedicated to delivering exceptional results for our clients. Our team of experts brings decades of combined experience across enterprise software, infrastructure, and digital transformation.</p>
+          <p>From inception to deployment, we maintain a commitment to quality, transparency, and measurable outcomes — ensuring every project we undertake becomes a benchmark of excellence.</p>
+          <p>We believe that great technology is not just built — it is designed with purpose, refined through collaboration, and sustained through unwavering support.</p>
+          <button class="btn-primary-rt" onclick="document.getElementById('loginModal').classList.add('open')">
+            Get in Touch <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="values-grid">
+        <div class="values-image reveal">
+          <img src="earth.webp" alt="Our Values" onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80'" />
+        </div>
+        <div class="values-text reveal">
+          <h3>Our Core Values</h3>
+          <span class="gold-line"></span>
+          <p><strong>Mission —</strong> To empower businesses with technology that is robust, beautiful, and built to last. We pursue excellence in every engagement, treating each client's challenges as our own.</p>
+          <p><strong>Vision —</strong> A world where every organization, regardless of size, has access to enterprise-grade solutions that drive sustainable growth and competitive advantage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal-overlay" id="loginModal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h4>Access Your Account</h4>
+        <button class="modal-close" onclick="document.getElementById('loginModal').classList.remove('open')">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="modal-body-rt">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="••••••••" />
+        </div>
+      </div>
+      <div class="modal-footer-rt">
+        <small>* All fields are required</small>
+        <div>
+          <button class="btn-modal-cancel" onclick="document.getElementById('loginModal').classList.remove('open')">Cancel</button>
+          <button class="btn-modal-login">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label reveal">What We Do</div>
+      <h2 class="section-title reveal">Our Services</h2>
+      <span class="gold-line reveal"></span>
+      <p class="section-desc reveal">We provide high-quality, end-to-end solutions tailored to accelerate your business growth.</p>
+
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-power"></i></div>
+          <h5>Powerful Solutions</h5>
+          <p>We deliver scalable and efficient systems engineered to power your most demanding business operations.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-heart"></i></div>
+          <h5>Customer Focus</h5>
+          <p>Client satisfaction is at the core of everything we do. We build lasting, trusted relationships with every engagement.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-lock"></i></div>
+          <h5>Secure Systems</h5>
+          <p>A security-first approach that protects your data, your users, and your digital assets at every layer.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-recycle"></i></div>
+          <h5>Eco Friendly</h5>
+          <p>Sustainable and environmentally responsible solutions for modern businesses committed to a better future.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-award-fill"></i></div>
+          <h5>Certified Experts</h5>
+          <p>Our team consists of industry-certified professionals and domain specialists delivering measurable results.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-wrench"></i></div>
+          <h5>Technical Support</h5>
+          <p>Reliable maintenance and dedicated support to keep your critical systems running smoothly around the clock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label reveal">Case Studies</div>
+      <h2 class="section-title reveal">Our Portfolio</h2>
+      <span class="gold-line reveal"></span>
+      <p class="section-desc reveal">A curated showcase of our most recent and impactful professional projects.</p>
+
+      <div class="portfolio-grid reveal">
+        <div class="portfolio-card">
+          <img src="p.jpg" alt="Paris Project" onerror="this.src='https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80'" />
+          <div class="portfolio-card-body">
+            <span class="portfolio-tag">Infrastructure</span>
+            <h5>Paris</h5>
+            <p>Commercial infrastructure development driving urban connectivity across the metropolitan region.</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="london.jpeg" alt="London Project" onerror="this.src='https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80'" />
+          <div class="portfolio-card-body">
+            <span class="portfolio-tag">Architecture</span>
+            <h5>London</h5>
+            <p>Modern architectural and urban design solutions reshaping the city's business district identity.</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="wdc.jpg" alt="Washington Project" onerror="this.src='https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=800&q=80'" />
+          <div class="portfolio-card-body">
+            <span class="portfolio-tag">Enterprise</span>
+            <h5>Washington D.C.</h5>
+            <p>Government and enterprise-level development engineered for scale, security, and long-term resilience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonials-section">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <div class="section-label reveal">Social Proof</div>
+      <h2 class="section-title reveal">What Our Clients Say</h2>
+      <span class="gold-line center reveal"></span>
+
+      <div class="testimonials-track reveal">
+        <div class="testimonials-inner" id="testimonialInner">
+          <div class="testimonial-slide">
+            <p class="testimonial-quote">This company is outstanding. The results exceeded every expectation we had going in.</p>
+            <div class="testimonial-author">
+              <strong>Michael Roe</strong>
+              <span>Vice President — Comment Box Inc.</span>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <p class="testimonial-quote">Working with RetroTech transformed how we approach our technology infrastructure. Truly remarkable.</p>
+            <div class="testimonial-author">
+              <strong>John Doe</strong>
+              <span>Sales Director — Rep Inc.</span>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <p class="testimonial-quote">I could not be happier with the professionalism, the quality, and the genuine care this team brings to every project.</p>
+            <div class="testimonial-author">
+              <strong>Chandler Bing</strong>
+              <span>Senior Partner — FriendsAlot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-controls">
+        <button class="t-btn" id="tPrev"><i class="bi bi-arrow-left"></i></button>
+        <div class="t-dots" id="tDots">
+          <div class="t-dot active" onclick="goToSlide(0)"></div>
+          <div class="t-dot" onclick="goToSlide(1)"></div>
+          <div class="t-dot" onclick="goToSlide(2)"></div>
+        </div>
+        <button class="t-btn" id="tNext"><i class="bi bi-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label reveal">Transparent Costs</div>
+      <h2 class="section-title reveal">Pricing Plans</h2>
+      <span class="gold-line reveal"></span>
+      <p class="section-desc reveal">Choose a plan tailored to your business scale and ambition.</p>
+
+      <div class="pricing-grid reveal">
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Basic</div>
+          <div class="pricing-amount"><sup>$</sup>19</div>
+          <div class="pricing-period">per month, billed monthly</div>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li><i class="bi bi-check2"></i> 20 Projects</li>
+            <li><i class="bi bi-check2"></i> 15 GB Storage</li>
+            <li><i class="bi bi-check2"></i> 5 Team Members</li>
+            <li><i class="bi bi-check2"></i> 2 Integrations</li>
+            <li><i class="bi bi-check2"></i> Email Support</li>
+          </ul>
+          <button class="btn-pricing btn-pricing-outline">Get Started</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Standard</div>
+          <div class="pricing-amount"><sup>$</sup>29</div>
+          <div class="pricing-period">per month, billed monthly</div>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li><i class="bi bi-check2"></i> 50 Projects</li>
+            <li><i class="bi bi-check2"></i> 25 GB Storage</li>
+            <li><i class="bi bi-check2"></i> 10 Team Members</li>
+            <li><i class="bi bi-check2"></i> 5 Integrations</li>
+            <li><i class="bi bi-check2"></i> Priority Support</li>
+          </ul>
+          <button class="btn-pricing btn-pricing-filled">Get Started</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Premium</div>
+          <div class="pricing-amount"><sup>$</sup>59</div>
+          <div class="pricing-period">per month, billed monthly</div>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li><i class="bi bi-check2"></i> Unlimited Projects</li>
+            <li><i class="bi bi-check2"></i> 50 GB Storage</li>
+            <li><i class="bi bi-check2"></i> Unlimited Members</li>
+            <li><i class="bi bi-check2"></i> 10 Integrations</li>
+            <li><i class="bi bi-check2"></i> Dedicated Manager</li>
+          </ul>
+          <button class="btn-pricing btn-pricing-outline">Get Started</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label reveal">Let's Talk</div>
+      <h2 class="section-title reveal">Contact Us</h2>
+      <span class="gold-line reveal"></span>
+      <p class="section-desc reveal">We would love to hear from you. Reach out and we'll respond within 24 hours.</p>
+
+      <div class="contact-grid reveal">
+
+        <div class="contact-info">
+          <h4>Get in Touch</h4>
+          <p>Whether you have a project in mind, a question about our services, or simply want to learn more — our team is ready to help.</p>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div class="contact-detail-text">
+              <span>Location</span>
+              <p>Chicago, Illinois, US</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="bi bi-phone-fill"></i></div>
+            <div class="contact-detail-text">
+              <span>Phone</span>
+              <p>+1 (515) 151-5151</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div class="contact-detail-text">
+              <span>Email</span>
+              <p>hello@retrotech.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="input-row">
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="Email Address" />
+          </div>
+          <textarea placeholder="Tell us about your project or inquiry…"></textarea>
+          <button class="btn-submit" type="button">Send Message</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="footer-logo">RETRO<span>TECH</span></div>
+      <div class="footer-divider"></div>
+      <br>
+      <a href="#mypage" class="back-top" title="Back to Top">
+        <i class="bi bi-chevron-up"></i>
+      </a>
+      <p class="footer-copy">
+        Crafted with precision by
+        <a href="#">Raj Saha</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 RetroTech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile Menu ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMenu() { mobileMenu.classList.remove('open'); }
+
+    // ── Testimonial Slider ──
+    let current = 0;
+    const total = 3;
+    const inner = document.getElementById('testimonialInner');
+    const dots = document.querySelectorAll('.t-dot');
+
+    function goToSlide(i) {
+      current = i;
+      inner.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+    }
+
+    document.getElementById('tPrev').addEventListener('click', () => {
+      goToSlide((current - 1 + total) % total);
+    });
+    document.getElementById('tNext').addEventListener('click', () => {
+      goToSlide((current + 1) % total);
+    });
+
+    // Auto-advance
+    setInterval(() => goToSlide((current + 1) % total), 5000);
+
+    // ── Scroll Reveal ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => observer.observe(r));
+
+    // ── Nav scroll shrink ──
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.site-nav');
+      nav.style.height = window.scrollY > 60 ? '60px' : '72px';
+    });
+  </script>
+</body>
+</html>
